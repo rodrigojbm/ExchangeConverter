@@ -13,7 +13,5 @@ namespace MoneyConverter.Models
         public long UltimaConsulta { get; set; }
         [JsonProperty("fonte")]
         public string Fonte { get; set; }
-
-        public FileImageSource IconeMoeda { get; set; }
     }
 }
