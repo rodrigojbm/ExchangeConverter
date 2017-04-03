@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyConverter.Views.MoedasPage"
+             xmlns:VM="clr-namespace:MoneyConverter.ViewModels"
+             xmlns:extensions="clr-namespace:MoneyConverter.Extensions;assembly=MoneyConverter"
+             Title="MoneyConverter">
+
+  <ContentPage.BindingContext>
+    <VM:MoedasViewModel/>
+  </ContentPage.BindingContext>
+    
+  <ContentPage.ToolbarItems>
+    <ToolbarItem x:Name="MenuItem1" Order="Primary" Icon="Microsoft.png" Text="Contato" Priority="0" Clicked="MenuItem1_OnClicked"/>
+  </ContentPage.ToolbarItems>
+
+<StackLayout Spacing="0" Padding="10, 15" BackgroundColor="Transparent">
+  <Label Text="Escolha a moeda para realizar a conversão" HorizontalOptions="Start" VerticalOptions="Center" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+    <Picker x:Name="moedaPicker" Title="Selecione uma Moeda" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+  <Entry x:Name="valor" Placeholder="Informe o valor" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+  <Button x:Name="btnConverter" IsEnabled="True" Text="Converter" HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center" Clicked="btnConverter_Clicked"/>
+  
+  <Label x:Name="lblmsg" Text="Nenhuma conversão realizada" TextColor="Black" FontSize="25" 
+         HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+  </StackLayout>
+</ContentPage>
